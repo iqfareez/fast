@@ -1,0 +1,21 @@
+name: Internet speed test using Fast.com
+on:
+  workflow_dispatch
+
+jobs:
+  speedtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+    - name: Install fast-cli
+      run: npm install --global fast-cli
+
+    - name: Run speedtest
+      run: fast --upload --json > output.json
+
+    - name: Show result
+      run: cat output.json
+

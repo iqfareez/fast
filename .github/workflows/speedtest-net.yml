@@ -1,0 +1,19 @@
+name: Internet speed test using speedtest.net
+
+on:
+  workflow_dispatch
+
+jobs:
+  speedtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+    - name: Install speed-test
+      run: npm install --global speedtest-net
+
+    - name: Run speedtest
+      run: speedtest-net --accept-license --accept-gdpr
+
