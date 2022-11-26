@@ -11,9 +11,9 @@ jobs:
         with:
           node-version: 16
 
-    - name: Install speed-test
-      run: npm install --global speedtest-net
+      - name: Install speed-test
+        run: npm install --global speedtest-net
 
-    - name: Run speedtest
-      run: speedtest-net --accept-license --accept-gdpr
+      - name: Run speedtest
+        run: speedtest-net --accept-license --accept-gdpr
 

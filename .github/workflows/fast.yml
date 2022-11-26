@@ -10,12 +10,11 @@ jobs:
         with:
           node-version: 16
 
-    - name: Install fast-cli
-      run: npm install --global fast-cli
+      - name: Install fast-cli
+        run: npm install --global fast-cli
 
-    - name: Run speedtest
-      run: fast --upload --json > output.json
+      - name: Run speedtest
+        run: fast --upload --json > output.json
 
-    - name: Show result
-      run: cat output.json
-
+      - name: Show result
+        run: cat output.json
